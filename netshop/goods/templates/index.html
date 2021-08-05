@@ -8,54 +8,9 @@
     <div class="classes">
         <ul class="classes-items">
 
-
-
-
-
-                    <li class="items"><a href="http://127.0.0.1:8000/category/7">男装</a></li>
-
-
-                    <li class="items active "><a href="http://127.0.0.1:8000/category/8">女装</a></li>
-
-
-                    <li class="items"><a href="http://127.0.0.1:8000/category/9">鞋子</a></li>
-
-
-                    <li class="items"><a href="http://127.0.0.1:8000/category/10">箱包</a></li>
-
-
-                    <li class="items"><a href="http://127.0.0.1:8000/category/11">母婴</a></li>
-
-
-                    <li class="items"><a href="http://127.0.0.1:8000/category/12">美妆</a></li>
-
-
-                    <li class="items"><a href="http://127.0.0.1:8000/category/13">居家</a></li>
-
-
-                    <li class="items"><a href="http://127.0.0.1:8000/category/14">家纺</a></li>
-
-
-                    <li class="items"><a href="http://127.0.0.1:8000/category/15">文体</a></li>
-
-
-                    <li class="items"><a href="http://127.0.0.1:8000/category/16">美食</a></li>
-
-
-                    <li class="items"><a href="http://127.0.0.1:8000/category/17">数码</a></li>
-
-
-                    <li class="items"><a href="http://127.0.0.1:8000/category/18">电器</a></li>
-
-
-                    <li class="items"><a href="http://127.0.0.1:8000/category/19">内衣</a></li>
-
-
-                    <li class="items"><a href="http://127.0.0.1:8000/category/20">装饰</a></li>
-
-
-
-
+            {% for category in categorys %}
+                    <li class="items {% if currentCid == category.id %}>active{% endif %}"><a href="/category/{{ category.id }}">{{ category.cname }}</a></li>
+            {% endfor %}
 
         </ul>
     </div>
