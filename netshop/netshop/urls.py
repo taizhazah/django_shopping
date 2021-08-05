@@ -13,9 +13,20 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls import url
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+
+from netshop.settings import DEBUG, MEDIA_ROOT
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    url(r'^admin/', admin.site.urls),
+    # path('admin/', admin.site.urls),
+    url(r'^', include('goods.urls')),
 ]
+
+if DEBUG:
+    from django.views.static import serve
+    urlpatterns.append(url(r'media/(.*)', serve, kwargs={'documnet_root': MEDIA_ROOT}))
+
+
